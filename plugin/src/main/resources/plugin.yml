@@ -1,10 +1,10 @@
 name: CommandSigns
-main: be.nokorbis.spigot.commandsigns.CommandSignsPlugin
-author: Nokorbis
+main: project.hsi.commandsigns.CommandSignsPlugin
+author: Nokorbis / [Project HSI]
 description: Allows admins to create Command Blocks (signs, buttons, plates, tripwire, trapped chest and levers) that can be executed on action.
 api-version: 1.13
 version: ${project.version}
-website: https://www.spigotmc.org/resources/command-signs.10512/
+website: https://github.com/ProjectHSI/ar-command-signs
 softdepend: [Multiverse-Core,Vault,My_Worlds]
 load: POSTWORLD
 commands:
