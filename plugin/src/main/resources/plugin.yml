@@ -30,6 +30,7 @@ permissions:
          commandsign.admin.version: true
          commandsign.admin.help: true
          commandsign.admin.debug: true
+         commandsign.admin.set.*: true
    commandsign.timer.bypass:
       default: false
       description: Allows to bypass timers on command signs
@@ -78,3 +79,14 @@ permissions:
    commandsign.admin.debug:
       default: false
       description: Gives access to the debug command
+   commandsign.admin.set:
+      default: false
+      description: Gives access to the set command
+   commandsign.admin.set.*:
+      default: false
+      description: Gives access to all permission nodes of the set command
+      children:
+         commandsign.admin.set.super: true
+   commandsign.admin.set.super:
+      default: false
+      description: Allows OP and Super commands

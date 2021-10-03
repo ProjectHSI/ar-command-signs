@@ -2,6 +2,7 @@ package be.nokorbis.spigot.commandsigns.controller.editor;
 
 import be.nokorbis.spigot.commandsigns.model.CommandBlock;
 import be.nokorbis.spigot.commandsigns.model.CommandSignsCommandException;
+import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,7 +15,7 @@ public final class CoreCommandsEditor extends CommandBlockDataEditorBase {
     private static final List<String> SUB_COMMANDS = Arrays.asList("add", "edit", "remove");
 
     @Override
-    public void editValue(CommandBlock data, List<String> args) throws CommandSignsCommandException {
+    public void editValue(CommandBlock data, List<String> args, CommandSender sender) throws CommandSignsCommandException {
         if (args.size() < 2) {
             throw new CommandSignsCommandException(messages.get("error.command.more_args"));
         }
@@ -24,7 +25,15 @@ public final class CoreCommandsEditor extends CommandBlockDataEditorBase {
             String command = args.remove(0);
             if ("add".equals(command)) {
                 String toAdd = String.join(" ", args);
-                commands.add(toAdd);
+                if (toAdd.startsWith("#") || toAdd.startsWith("^")) {
+                    if (sender.hasPermission("commandsign.admin.set.super")) {
+                        commands.add(toAdd);
+                    } else {
+                        throw new CommandSignsCommandException(messages.get("error.no_super_permission"));
+                    }
+                } else {
+                    commands.add(toAdd);
+                }
             }
             else {
                 int index = Integer.parseUnsignedInt(args.remove(0));
@@ -41,7 +50,15 @@ public final class CoreCommandsEditor extends CommandBlockDataEditorBase {
                     }
 
                     String toChange = String.join(" ", args);
-                    commands.set(index-1, toChange);
+                    if (toChange.startsWith("#") || toChange.startsWith("^")) {
+                        if (sender.hasPermission("commandsign.admin.set.super")) {
+                            commands.set(index-1, toChange);
+                        } else {
+                            throw new CommandSignsCommandException(messages.get("error.no_super_permission"));
+                        }
+                    } else {
+                        commands.set(index-1, toChange);
+                    }
                 }
             }
 

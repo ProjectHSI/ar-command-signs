@@ -76,5 +76,6 @@ menu.confirmation.title                 = Require confirmation
 menu.confirmation.edit                  = §eShould the command block require a confirmation ? §d(Yes/No)
 menu.value.no                           = No
 menu.value.yes                          = Yes
+error.no_super_permission               = §4You don't have the permission to add a super command.
 
 

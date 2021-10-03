@@ -32,7 +32,15 @@ public class CoreMenuCommandsAdd extends EditionLeaf<CommandBlock> {
 	@Override
 	public void input(Player player, CommandBlock data, String message, MenuNavigationContext navigationContext) {
 		if (!CANCEL_STRING.equals(message)) {
-			data.getCommands().add(message);
+			if (message.startsWith("#") || message.startsWith("^")) {
+				if (player.hasPermission("commandsign.admin.set.super")) {
+					data.getCommands().add(message);
+				} else {
+					player.sendRawMessage(messages.get("error.no_super_permission"));
+				}
+			} else {
+				data.getCommands().add(message);
+			}
 		}
 		navigationContext.setCoreMenu(getParent());
 	}

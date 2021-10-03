@@ -54,7 +54,7 @@ public class SetCommand extends CommandRequiringManager {
         }
 
         if (coreEditor != null) {
-            coreEditor.editValue(commandBlock, args);
+            coreEditor.editValue(commandBlock, args, sender);
         }
         else {
             AddonConfigurationData addonConfigurationData = commandBlock.getAddonConfigurationData(addonEditor.getAddon());

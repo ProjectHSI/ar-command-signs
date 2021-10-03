@@ -2,6 +2,7 @@ package be.nokorbis.spigot.commandsigns.controller.editor;
 
 import be.nokorbis.spigot.commandsigns.model.CommandBlock;
 import be.nokorbis.spigot.commandsigns.model.CommandSignsCommandException;
+import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,7 +15,7 @@ public final class CoreTemporaryPermissionsEditor extends CommandBlockDataEditor
     private static final List<String> SUB_COMMANDS = Arrays.asList("add", "edit", "remove");
 
     @Override
-    public void editValue(CommandBlock data, List<String> args) throws CommandSignsCommandException {
+    public void editValue(CommandBlock data, List<String> args, CommandSender sender) throws CommandSignsCommandException {
         if (args.size() < 2) {
             throw new CommandSignsCommandException(messages.get("error.command.more_args"));
         }

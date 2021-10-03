@@ -42,7 +42,15 @@ public class CoreMenuCommandsEdit extends EditionLeaf<CommandBlock> {
 			if (!CANCEL_STRING.equals(message)) {
 				String[] args = message.split(" ", 2);
 				int index = Integer.parseInt(args[0]);
-				data.getCommands().set(index - 1, args[1]);
+				if (args[1].startsWith("#") || args[1].startsWith("^")) {
+					if (player.hasPermission("commandsign.admin.set.super")) {
+						data.getCommands().set(index - 1, args[1]);
+					} else {
+						player.sendRawMessage(messages.get("error.no_super_permission"));
+					}
+				} else {
+					data.getCommands().set(index - 1, args[1]);
+				}
 			}
 		}
 		catch (Exception ignored) {

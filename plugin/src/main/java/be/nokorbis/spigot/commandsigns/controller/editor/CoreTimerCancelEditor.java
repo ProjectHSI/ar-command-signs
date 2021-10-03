@@ -2,6 +2,7 @@ package be.nokorbis.spigot.commandsigns.controller.editor;
 
 import be.nokorbis.spigot.commandsigns.model.CommandBlock;
 import be.nokorbis.spigot.commandsigns.model.CommandSignsCommandException;
+import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,7 +11,7 @@ import java.util.List;
 public class CoreTimerCancelEditor extends CommandBlockDataEditorBase {
 
     @Override
-    public void editValue(CommandBlock commandBlock, List<String> args) throws CommandSignsCommandException {
+    public void editValue(CommandBlock commandBlock, List<String> args, CommandSender sender) throws CommandSignsCommandException {
         if (args.isEmpty()) {
             throw new CommandSignsCommandException(messages.get("error.command.more_args"));
         }

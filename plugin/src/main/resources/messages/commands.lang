@@ -10,6 +10,7 @@ error.command_needs_arguments          = §4You must specify at least one argume
 error.command.more_args                = §4This command requires more arguments.
 error.invalid_command_id               = §4No command block was found with for this ID.
 error.no_permission                    = §4You do NOT have the permission to use this command.
+error.no_super_permission              = §4You don't have the permission to add a super command.
 howto.click_for_info                   = §6Click on command block whose you want information
 howto.click_to_copy                    = §6Click on the command block you want to copy.
 howto.click_to_delete                  = §6Click on the command block you want to delete.
