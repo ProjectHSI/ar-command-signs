@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spigot.commandsigns</artifactId>
-        <groupId>be.nokorbis</groupId>
-        <version>2.3.0</version>
+        <groupId>project.hsi</groupId>
+        <artifactId>commandsigns</artifactId>
+        <version>1.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

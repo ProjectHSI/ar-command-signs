@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>be.nokorbis</groupId>
-    <artifactId>spigot.commandsigns</artifactId>
-    <version>2.3.0</version>
+    <groupId>project.hsi</groupId>
+    <artifactId>commandsigns</artifactId>
+    <version>1.0.3</version>
     <modules>
         <module>updater</module>
         <module>plugin</module>
     </modules>
-    <name>Spigot-CommandSigns</name>
+    <name>Commandsigns</name>
     <packaging>pom</packaging>
 
     <properties>
@@ -19,7 +19,7 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/Nokorbis/ar-command-signs.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/ProjectHSI/ar-command-signs.git</developerConnection>
     </scm>
 
     <repositories>
