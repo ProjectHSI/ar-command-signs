@@ -1,6 +1,6 @@
-package be.nokorbis.commandsigns.updater.data;
+package project.hsi.commandsigns.updater.data;
 
-import be.nokorbis.commandsigns.updater.models.CommandBlock;
+import project.hsi.commandsigns.updater.models.CommandBlock;
 
 import java.util.Collection;
 

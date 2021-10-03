@@ -1,5 +1,6 @@
 package project.hsi.commandsigns.command.subcommands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import project.hsi.commandsigns.CommandSignsPlugin;
@@ -19,8 +20,26 @@ public class VersionCommand extends Command {
 
     @Override
     public boolean execute(CommandSender sender, List<String> args) {
-        sender.sendMessage(ChatColor.AQUA + "CommandSign version : " + CommandSignsPlugin.getPlugin().getDescription().getVersion() + " developed by Nokorbis.");
+        sender.sendMessage(ChatColor.AQUA + "CommandSign version : 1.1.0 developed by Nokorbis.");
         sender.sendMessage(ChatColor.GOLD + (ChatColor.MAGIC + "HSI1337" + ChatColor.RESET) + ChatColor.GOLD + " Modded by " + (ChatColor.MAGIC + "HSI" + ChatColor.RESET) + ChatColor.GOLD + " [Project HSI] " + ChatColor.MAGIC + "HSI HSI1337");
+        Bukkit.getScheduler().runTaskAsynchronously(CommandSignsPlugin.getPlugin(), () -> {
+
+            try {
+
+                String LatestVersion = CommandSignsPlugin.getPlugin().getLatestVersion();
+
+                if (!LatestVersion.equals("V1.1.0")) {
+                    sender.sendMessage(ChatColor.RED + "There is a newer version of CommandSigns published!");
+                    sender.sendMessage(ChatColor.RED + "Please update to " + LatestVersion + " if possible!");
+                }
+
+            } catch (Exception e) {
+                sender.sendMessage(ChatColor.RED + "Something happened while trying to reach Github, please check if the server is connected to the internet.");
+                sender.sendMessage(ChatColor.RED + e.getMessage());
+            }
+
+        });
+
         return true;
     }
 

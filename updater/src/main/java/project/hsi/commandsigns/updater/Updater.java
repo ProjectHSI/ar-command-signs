@@ -1,8 +1,8 @@
-package be.nokorbis.commandsigns.updater;
+package project.hsi.commandsigns.updater;
 
-import be.nokorbis.commandsigns.updater.data.v16x.CommandBlockGsonDeserializer;
-import be.nokorbis.commandsigns.updater.data.v20x.CommandBlockGsonSerializer;
-import be.nokorbis.commandsigns.updater.models.CommandBlock;
+import project.hsi.commandsigns.updater.data.v16x.CommandBlockGsonDeserializer;
+import project.hsi.commandsigns.updater.data.v20x.CommandBlockGsonSerializer;
+import project.hsi.commandsigns.updater.models.CommandBlock;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -13,6 +13,7 @@ import java.nio.file.StandardCopyOption;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class Updater {
 
 	private static final String EXTENSION = ".json";
@@ -34,7 +35,7 @@ public class Updater {
 		File execFolder = new File(baseDir, "executions");
 		if (!execFolder.exists()) { execFolder.mkdirs(); }
 		File confFolder = new File(baseDir, "configurations");
-		if (!confFolder.exists()) { confFolder.mkdirs(); }
+		if (!confFolder.exists()) confFolder.mkdirs();
 
 		GsonBuilder b1 = new GsonBuilder();
 		b1.registerTypeAdapter(CommandBlock.class, new CommandBlockGsonDeserializer());
@@ -50,9 +51,7 @@ public class Updater {
 				CommandBlock commandBlock;
 
 				File outputFile = new File(confFolder, file.getName());
-				if (outputFile.exists()) {
-					outputFile.createNewFile();
-				}
+				if (outputFile.exists()) outputFile.createNewFile();
 
 				try (InputStream is = new FileInputStream(file);
 					 InputStreamReader reader = new InputStreamReader(is, UTF_8)) {

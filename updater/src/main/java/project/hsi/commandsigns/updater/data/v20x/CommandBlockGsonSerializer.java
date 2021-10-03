@@ -1,7 +1,7 @@
-package be.nokorbis.commandsigns.updater.data.v20x;
+package project.hsi.commandsigns.updater.data.v20x;
 
-import be.nokorbis.commandsigns.updater.models.CommandBlock;
-import be.nokorbis.commandsigns.updater.models.Location;
+import project.hsi.commandsigns.updater.models.CommandBlock;
+import project.hsi.commandsigns.updater.models.Location;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;

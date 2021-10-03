@@ -73,7 +73,7 @@
     </dependencies>
 
     <build>
-        <finalName>Spigot-CommandSigns</finalName>
+        <finalName>CommandSigns</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

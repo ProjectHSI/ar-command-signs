@@ -6,12 +6,12 @@
 
     <groupId>project.hsi</groupId>
     <artifactId>commandsigns</artifactId>
-    <version>1.0.3</version>
+    <version>1.1.0</version>
     <modules>
         <module>updater</module>
         <module>plugin</module>
     </modules>
-    <name>Commandsigns</name>
+    <name>CommandSigns</name>
     <packaging>pom</packaging>
 
     <properties>

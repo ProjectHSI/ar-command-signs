@@ -1,4 +1,4 @@
-package be.nokorbis.commandsigns.updater.models;
+package project.hsi.commandsigns.updater.models;
 
 public class Location {
 
