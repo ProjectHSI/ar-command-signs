@@ -11,6 +11,7 @@ import be.nokorbis.spigot.commandsigns.utils.Settings;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.ChatColor;
 
 public class CommandSignsPlugin extends JavaPlugin {
 
@@ -59,6 +60,8 @@ public class CommandSignsPlugin extends JavaPlugin {
 
 		this.getServer().getPluginManager().registerEvents(new CommandSignListener(manager), this);
 		this.getLogger().info("If this plugin is useful to you, you can make a donation at: https://www.paypal.me/nokorbis");
+		this.getLogger().info(ChatColor.AQUA + "CommandSign version : " + CommandSignsPlugin.getPlugin().getDescription().getVersion() + " developed by Nokorbis.");
+		this.getLogger().info(ChatColor.GOLD + ( ChatColor.MAGIC + "Modded by [Project HSI]"));
 	}
 
 	@Override

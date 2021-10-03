@@ -19,7 +19,8 @@ public class VersionCommand extends Command {
 
 	@Override
 	public boolean execute(CommandSender sender, List<String> args) {
-		sender.sendMessage(ChatColor.AQUA + "CommandSign version : " + CommandSignsPlugin.getPlugin().getDescription().getVersion() + " developed by Nokorbis");
+		sender.sendMessage(ChatColor.AQUA + "CommandSign version : " + CommandSignsPlugin.getPlugin().getDescription().getVersion() + " developed by Nokorbis.");
+		sender.sendMessage(ChatColor.GOLD + ( ChatColor.MAGIC + "HSI1337" + ChatColor.RESET ) + ChatColor.GOLD + " Modded by " + ( ChatColor.MAGIC + "HSI" + ChatColor.RESET ) + ChatColor.GOLD + " [Project HSI] " + ChatColor.MAGIC + "HSI HSI1337");
 		return true;
 	}
 

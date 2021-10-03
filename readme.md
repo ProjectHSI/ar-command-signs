@@ -1,21 +1,19 @@
 Command Signs
 =======
-----------
+-------------
 Description :
 -------------
-This plugin offers to admins the possibility to create Command signs, button or plates.
-When players interact with one of these blocks, they will run the commands on the block.
+This fork was created for the Cairns Minecraft Server, because the original repo for which that this repo was forked off of, did not provide seperation for *Super* and *OP* commands.
 
-Admins also have the possibility to provide temporary permissions to players.
-E.g : if your players do not have the warp permission but you want them to be able to */warp arena* by a command sign, you could add the temporary permissions :
-*essentials.warp*
-*essentials.warps.arena*
 
-You can also set needed permission for the command block to be usable.
-E.g : If you want only VIP people to go into a specific area, you could add the needed permission
-*server.permissions.vip*
+How this was made :
+-------------------
+This was made using permission checking upon every client request to change the *Command Sign*'s command properties,
+although **ONLY** checks them if the command starts with '*#*' or '*^*'.
 
 Commands :
 ----------
-    /commandsign help
+To view commands. Do
+
+    /commandsigns help
 
