@@ -6,6 +6,7 @@ import project.hsi.commandsigns.api.menu.EditionLeaf;
 import project.hsi.commandsigns.api.menu.EditionMenu;
 import project.hsi.commandsigns.api.menu.MenuNavigationContext;
 import project.hsi.commandsigns.model.CommandBlock;
+import project.hsi.commandsigns.utils.Settings;
 
 
 public class CoreMenuTemporaryPermissionsAdd extends EditionLeaf<CommandBlock> {
@@ -35,7 +36,11 @@ public class CoreMenuTemporaryPermissionsAdd extends EditionLeaf<CommandBlock> {
     @Override
     public void input(Player player, CommandBlock data, String message, MenuNavigationContext navigationContext) {
         if (!CANCEL_STRING.equals(message)) {
-            data.getTemporarilyGrantedPermissions().add(message);
+            if (player.hasPermission("commandsign.admin.set.perms")) {
+                data.getTemporarilyGrantedPermissions().add(message);
+            } else {
+                player.sendRawMessage(messages.get("error.no_perms_permission"));
+            }
         }
         navigationContext.setCoreMenu(getParent());
     }

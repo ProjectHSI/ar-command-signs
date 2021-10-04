@@ -28,9 +28,7 @@ public final class Settings {
         return COMMAND_CHAR;
     }
 
-    public static char DELAY_CHAR() {
-        return DELAY_CHAR;
-    }
+    public static char DELAY_CHAR() { return DELAY_CHAR; }
 
     public static char MESSAGE_CHAR() {
         return MESSAGE_CHAR;

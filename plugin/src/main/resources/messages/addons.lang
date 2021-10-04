@@ -27,3 +27,5 @@ error.command.require_list_action   = The argument must be one of: ADD/EDIT/REMO
 error.command.require_args          = §4This command requires more args.
 error.command.require_number        = §4This command requires a number.
 error.command.index_too_large       = §4The index you entered is too large.
+error.no_super_permission           = §4You don't have the permission to add a super command.
+error.no_perms_permission           = §4You don't have the permission to add a temporary permission to the user running the command sign.

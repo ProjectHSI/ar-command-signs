@@ -25,7 +25,11 @@ public final class CoreTemporaryPermissionsEditor extends CommandBlockDataEditor
             String command = args.remove(0);
             if ("add".equals(command)) {
                 String toAdd = String.join(" ", args);
-                permissions.add(toAdd);
+                if (sender.hasPermission("commandsign.admin.set.perms")) {
+                    permissions.add(toAdd);
+                } else {
+                    sender.sendMessage(messages.get("error.no_perms_permission"));
+                }
             } else {
                 int index = Integer.parseUnsignedInt(args.remove(0));
                 if (index > permissions.size()) {
@@ -38,9 +42,12 @@ public final class CoreTemporaryPermissionsEditor extends CommandBlockDataEditor
                     if (args.isEmpty()) {
                         throw new CommandSignsCommandException(messages.get("error.command.more_args"));
                     }
-
                     String toChange = String.join(" ", args);
-                    permissions.set(index - 1, toChange);
+                    if (sender.hasPermission("commandsign.admin.set.perms")) {
+                        permissions.set(index - 1, toChange);
+                    } else {
+                        sender.sendMessage(messages.get("error.no_perms_permission"));
+                    }
                 }
             }
 

@@ -9,7 +9,7 @@ import project.hsi.commandsigns.api.menu.MenuEditable;
 import java.util.*;
 
 
-public class CommandBlock implements MenuEditable, Cloneable {
+public class  CommandBlock implements MenuEditable, Cloneable {
 
     private transient static Set<Long> usedIds = new HashSet<>();
     private transient static Long biggerUsedId = 0L;
