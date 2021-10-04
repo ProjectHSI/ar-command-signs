@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**What is the version of Spigot you are using ?**
+**What is the version of Spigot/Paper you are using ?**
 
 **What is the version of CommandSigns you are using ?**
 
