@@ -33,6 +33,8 @@ public class CommandSignsPlugin extends JavaPlugin {
         return plugin;
     }
 
+    public static String version = "V1.1.1-2";
+
     @Override
     public void onLoad() {
         plugin = this;
@@ -72,7 +74,7 @@ public class CommandSignsPlugin extends JavaPlugin {
 
         this.getServer().getPluginManager().registerEvents(new CommandSignListener(manager), this);
         //this.getLogger().info("If this plugin is useful to you, you can make a donation at: https://www.paypal.me/nokorbis");
-        this.getLogger().info(ChatColor.AQUA + "CommandSign version : 1.1.0 developed by Nokorbis.");
+        this.getLogger().info(ChatColor.AQUA + "CommandSign version : " + version +  "developed by Nokorbis.");
         this.getLogger().info(ChatColor.GOLD + (ChatColor.MAGIC + "Modded by [Project HSI]"));
 
         Bukkit.getScheduler().runTaskAsynchronously(getPlugin(), () -> {
@@ -81,7 +83,7 @@ public class CommandSignsPlugin extends JavaPlugin {
 
                 String LatestVersion = getLatestVersion();
 
-                if (!LatestVersion.equals("V1.1.0")) {
+                if (!LatestVersion.equals(version)) {
                     getServer().getLogger().warning(ChatColor.RED + ( ChatColor.MAGIC + "There is a newer version of CommandSigns published!" ));
                     getServer().getLogger().warning(ChatColor.RED + ( ChatColor.MAGIC + "Please update to " + LatestVersion + " if possible!" ));
                 }

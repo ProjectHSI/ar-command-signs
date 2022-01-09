@@ -20,7 +20,7 @@ public class VersionCommand extends Command {
 
     @Override
     public boolean execute(CommandSender sender, List<String> args) {
-        sender.sendMessage(ChatColor.AQUA + "CommandSign version : 1.1.0 developed by Nokorbis.");
+        sender.sendMessage(ChatColor.AQUA + "CommandSign version : " + CommandSignsPlugin.version +  "developed by Nokorbis.");
         sender.sendMessage(ChatColor.GOLD + (ChatColor.MAGIC + "HSI1337" + ChatColor.RESET) + ChatColor.GOLD + " Modded by " + (ChatColor.MAGIC + "HSI" + ChatColor.RESET) + ChatColor.GOLD + " [Project HSI] " + ChatColor.MAGIC + "HSI HSI1337");
         Bukkit.getScheduler().runTaskAsynchronously(CommandSignsPlugin.getPlugin(), () -> {
 
@@ -28,7 +28,7 @@ public class VersionCommand extends Command {
 
                 String LatestVersion = CommandSignsPlugin.getPlugin().getLatestVersion();
 
-                if (!LatestVersion.equals("V1.1.0")) {
+                if (!LatestVersion.equals(CommandSignsPlugin.version)) {
                     sender.sendMessage(ChatColor.RED + "There is a newer version of CommandSigns published!");
                     sender.sendMessage(ChatColor.RED + "Please update to " + LatestVersion + " if possible!");
                 }
